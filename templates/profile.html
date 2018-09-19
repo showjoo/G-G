@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block left_content %}
+   
+
+
+    <div class="topnews">
+  
+
+
+
+
+     <h2>个人信息</h2>
+     <div class="cloud">
+      <br>
+          <table>
+                  <tbody>
+                  <tr>
+                        <td>  姓名： </td>
+                        <td>  {{user.last_name}}{{user.first_name}} </td>
+                  </tr>
+                                    <tr>
+                        <td>  卡号：</td>
+                        <td>  {{user.cardnum}} </td>
+                  </tr>  
+                                    <tr>
+                        <td> 身份证： </td>
+                        <td>  {{user.idnum}} </td>
+                  </tr>  
+                                    <tr>
+                        <td> 开户时间：</td>
+                        <td>  {{user.date_reg | date:'Y-m-d H:i:s' }} </td>
+                  </tr>  
+                                    <tr>
+                        <td>  开户行： </td>
+                        <td>  {{user.bankname}} </td>
+                  </tr> 
+                   <tr>
+                        <td> 账户状态：</td>
+                        <td>  {% if user.status = 1 %}  正常  {% else %} 冻结   {%  endif  %}</td>
+                  </tr>     
+                   <tr>
+                        <td> 手机：</td>
+                        <td>  {{user.mobile}} </td>
+                  </tr>    
+                        
+                  </tbody>
+          </table>
+      
+    
+
+     
+
+     </div>
+
+
+    </div>
+    <style type="text/css">
+.demo--label{margin:20px 20px 0 0;display:inline-block; border:1px solid #57ad68; padding: 5px 10px;}
+.demo--radio{display:none;}
+.demo--radioInput{background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:100%;display:inline-block;height:16px;margin-right:10px;margin-top:-1px;vertical-align:middle;width:16px;line-height:1}
+.demo--radio:checked + .demo--radioInput:after{background-color:#57ad68;border-radius:100%;content:"";display:inline-block;height:12px;margin:2px;width:12px}
+.demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
+    </style>
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

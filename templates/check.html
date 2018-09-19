@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block left_content %}
+   
+
+
+    <div class="topnews">
+
+
+
+     <h2>你的停车费用账单：</h2>
+     <div class="cloud">
+     <br>
+          <table>
+                  <thead>
+                      <td>订单号</td>
+                      <td>车位号</td>
+                      <td>停车时长</td>
+                      
+                  </thead>
+                  <tbody>
+                        <td>  {{uorder.id}} </td>
+                        <td>  {{uorder.pnum}}号车位 </td>
+                        <td> {{ hour}}小时 </td>
+                        
+                  </tbody>
+          </table>
+
+          <br> <br>
+      <h1 style="font-size:28px;color:red;">费用总计：¥ {{fee}}</h1>
+     </div>
+
+     <button id="okButton" ><a  href="/checkresult/?id={{uorder.id}}&fee={{fee}}" target="_blank" style="color:#FFF;">确认付款</a>  </button> 
+
+
+    </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

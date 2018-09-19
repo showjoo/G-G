@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block left_content %}
+   
+
+
+    <div class="topnews">
+     <h2> 日期选择</h2>
+     <form method="POST" action="/confirm/">
+
+      {% csrf_token %}
+
+     <div class="cloud">
+            <br><br>
+            <label>起始时间：</label><input type="date" name="dates" value="2018-05-01"/>
+            <input type="time" name="times"  value="12:00"/>
+&emsp;&emsp;
+                    
+             <label>结束时间：</label><input type="date"  name="datet" value="2018-05-01"/>
+             <input type="time" name="timet" value="16:00"/> 
+            &emsp;&emsp;
+            <input type="submit" name="submit" value="查询" id="testButton">
+             <br><br> 
+     </div>
+    </form>
+
+<h2>最近转账记录</h2>
+     <div class="cloud">
+      <br>
+
+    {% if od != NULL %}
+          <table>
+                <thead>
+                    <td> 转账单号 </td>
+                     <td>  对方账户</td>
+                      <td> 转账金额 </td>
+                       <td> 时间 </td>
+                </thead>
+                  <tbody>
+                  {%  for u in od %}
+                  <td> {{u.id}}</td>
+                  <td>{{u.cardnum}} </td>
+                  <td> {{u.money}}</td>
+                  <td>{{u.time |  date:'Y-m-d H:i:s' }} </td>
+                  {% endfor %}    
+                        
+                  </tbody>
+          </table>
+      
+        {% else %}
+
+      <P style="font-size:20px;"> 暂无转账信息！ </P>
+
+      {% endif %}
+
+     
+
+     </div>
+
+
+    </div>
+    <style type="text/css">
+.demo--label{margin:20px 20px 0 0;display:inline-block; border:1px solid #57ad68; padding: 5px 10px;}
+.demo--radio{display:none;}
+.demo--radioInput{background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:100%;display:inline-block;height:16px;margin-right:10px;margin-top:-1px;vertical-align:middle;width:16px;line-height:1}
+.demo--radio:checked + .demo--radioInput:after{background-color:#57ad68;border-radius:100%;content:"";display:inline-block;height:12px;margin:2px;width:12px}
+.demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
+    </style>
+
+
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock %}

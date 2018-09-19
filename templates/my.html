@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block left_content %}
+   
+    <div class="topnews">
+   
+     <div class="cloud logo">
+     <h3>欢迎你：{{uinfo.username}} &emsp; &emsp; 账户状态：{% if uinfo.status = 1 %}  正常  {% else %} 冻结   {%  endif  %}  </h3>
+     <br>
+       <h1 style="display:inline-block;">账户余额：¥ {{uinfo.balance}} </h1> &emsp;  &emsp; &emsp; &emsp; 
+      <br>
+     </div>
+
+  <h2>账户操作</h2>
+    <div class="book">
+     <ul>
+       <li> <a  class="blink" href="/transfer/"> <img src="/static/images/carwheel.png"> <p> 转账 </p></a> </li>
+
+       <li> <a class="blink" href="/lost/"> <img src="/static/images/compose.png"> <p> {% if uinfo.status = 1 %}  挂失  {% else %} 解冻  {%  endif  %}  </p></a> </li>
+    </ul>
+
+     </div>
+   
+ 
+
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+{% endblock %}

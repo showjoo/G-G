@@ -1,0 +1,20 @@
+<link href="/static/css/image.css" rel="stylesheet" type="text/css" />
+<div id="win">
+	<ul id="picChange">
+		<li><img  src="/static/images/gg1.jpg" width="740px" title=""></li>
+		<li><img  src="/static/images/gg2.jpg" width="740px" title=""></li>
+		<li><img  src="/static/images/gg3.jpg"  width="740px" title=""></li>
+		<li><img  src="/static/images/gg4.jpg"  width="740x" title=""></li>
+	</ul>
+</div>
+<script type="text/javascript" src="/static/js/picChange-0.3.2.js"></script>
+<script type="text/javascript">
+//直接切换效果
+//$pic("picChange").picChange();
+//淡出效果
+$pic("picChange").picChange({changeStyle:"fade",time:200,interTime:5000});
+//向上移出效果
+//$pic("picChange").picChange({changeStyle:"move",time:250,direction:"up"});
+//向上联动效果
+//$pic("picChange").picChange({changeStyle:"wheel",time:250,direction:"up"});
+</script>
