@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <LINK href="/static/css/login.css" type=text/css rel=stylesheet>
 </head>
-<script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <script type="text/javascript">
 	 function login(){
 		var account=$("#account").val();

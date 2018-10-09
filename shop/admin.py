@@ -6,19 +6,20 @@ from .models import *
 # Register your models here.
 class UserAdmin(admin.ModelAdmin):
 
-    list_display = ('id',)
+    list_display = ('id','username', 'last_login', 'date_joined')
     list_display_links = ('id', )
     fieldsets = (
         (None, {
-            'fields': ('last_name','first_name', 'status', )
+            'fields': ('last_name', 'first_name', 'status', )
         }),
     )
+
 
 # Register your models here.
 class FenleiAdmin(admin.ModelAdmin):
 
-    list_display = ('id', 'title','desc', )
-    list_display_links = ('id', 'title','desc', )
+    list_display = ('id', 'title', 'desc', )
+    list_display_links = ('id', 'title', 'desc', )
 
     fieldsets = (
 
@@ -30,7 +31,6 @@ class FenleiAdmin(admin.ModelAdmin):
             '/static/js/kindeditor-4.1.10/lang/zh_CN.js',
             '/static/js/kindeditor-4.1.10/config.js',
         )
-        
 
 
 # Register your models here.

@@ -12,7 +12,7 @@ from .models import *
 from .forms import *
 import json,datetime
 from django.core import serializers
-
+from django.template import RequestContext
 
 
 logger = logging.getLogger('shop.views')
@@ -73,7 +73,7 @@ def  shopcar(request):
     info=request.COOKIES.get('mycart')
     cart=[]
     totalPrice=0
-    print (info.split('|'))
+    print(info.split('|'))
     try:
         for item in info.split(","):
             car=Products.objects.get(id=info.split("|")[0])
@@ -115,9 +115,8 @@ def checkresult(request):
     return render(request, 'success.html', {'reason': '结账成功！'})
 
 
-
 def order(request):
-    user=User.objects.get(username=request.user.username)
+    user=User.objects.get(username=request.user.unameser)
     info=request.COOKIES.get('mycart')
     cart=[]
     totalPrice=0
@@ -135,13 +134,13 @@ def order(request):
 
     receiver=User.objects.get(username=request.user.username)
 
+    return render(request, 'shop/front/order.html', locals())
 
-    return render(request,'shop/front/order.html',locals())
 
 def usercenter(request):
     try:
         user=User.objects.get(username=request.user.username)
-        print (user)
+        print(user)
     except:
         return redirect('/login')
 
@@ -159,12 +158,11 @@ def confirm(request):
         od=Order.objects.filter(time__range=(tt1, tt2))
         return render(request, 'record.html', locals())
     except Exception as e:
-        print (e)
+        print(e)
         # return render(request, 'failure.html', {'reason': e})
 
 
-
-def  saveOrder(request):
+def saveOrder(request):
 
     return render(request, 'success.html', {'reason': '订单提交成功！跳转支付页面。。。'})
 
@@ -175,7 +173,7 @@ def do_logout(request):
     try:
         logout(request)
     except Exception as e:
-        print (e)
+        print(e)
         logger.error(e)
     return redirect('/')
 
@@ -186,22 +184,25 @@ def do_reg(request):
             reg_form = RegForm(request.POST)
             if reg_form.is_valid():
                 # 注册
-                user = User.objects.create(username=reg_form.cleaned_data["username"],
-                                    password=make_password(reg_form.cleaned_data["password"]),)
-                user.save()
-
-                # 登录
-                user.backend = 'django.contrib.auth.backends.ModelBackend' # 指定默认的登录验证方式
-                login(request, user)
-                return redirect("/")
+                password3 = reg_form.cleaned_data['password1']
+                password4 = reg_form.cleaned_data['password2']
+                if password3 != password4:
+                    return render(request,'reg.html', {'error': '两次输入的密码不一致！'})
+                else:
+                        user = User.objects.create(username=reg_form.cleaned_data["username"],
+                                    password=make_password(reg_form.cleaned_data['password1']),
+                                           )
+                        user.save()
+                        user.backend = 'django.contrib.auth.backends.ModelBackend' # 指定默认的登录验证方式
+                        login(request, user)
+                        return redirect("/")
             else:
-                return render(request, 'failure.html', {'reason': reg_form.errors})
+                return render(request,'failure.html', {'reason': reg_form.errors})
         else:
             reg_form = RegForm()
     except Exception as e:
         logger.error(e)
-    return render(request, 'reg.html', locals())
-
+    return render(request,'reg.html', locals(),)
 
 
 # 登录
@@ -214,9 +215,9 @@ def do_login(request):
                 username = login_form.cleaned_data["username"]
                 password = login_form.cleaned_data["password"]
                 user = authenticate(username=username, password=password)
-                print (user)
+                print(user)
                 if user is not None:
-                    print ("==66666666ooo")
+                    print("==66666666ooo")
                     user.backend = 'django.contrib.auth.backends.ModelBackend' # 指定默认的登录验证方式
                     login(request, user)
                     
@@ -238,7 +239,16 @@ def do_login(request):
         return render(request, 'failure.html', {'reason': e})
     
 
-
 def search(request):
     goods=Products.objects.filter(title__contains=request.POST['kw'])
     return render(request,'shop/front/product_list.html',locals())
+
+
+def history_order(request):
+    history_orders = Order.objects.filter(user_id=request.user.id)
+    return render(request, 'shop/front/history_order.html', locals())
+
+
+def history_donation(request):
+    history_donations = Order.objects.filter(user_id=request.user.id)
+    return render(request, 'shop/front/history_donation.html', locals())

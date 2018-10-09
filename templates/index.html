@@ -1,99 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-      <meta charset="utf-8">
-	<title>LivingVan在线商城</title>
-<link href="/static/style/common.css" rel="stylesheet" type="text/css" />
-<link href="/static/style/home.css" rel="stylesheet" type="text/css" />
-<link href="/static/style/sppd.css" rel="stylesheet" type="text/css" />
+<!DOCTYPE >
+<html>
+<head>
+	<title>G&G</title>
+    <link href="/static/style/home.css" rel="stylesheet" type="text/css" />
+    <link href="" rel="stylesheet" type="text/css" />
+    <link href="" rel="stylesheet" type="text/css" />
 </head>
-    <script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
 <body>
 <!--网站顶部-->
 <div class="webtop">
 {% include "top.html"%}
 </div>
 
+
 <!--搜索和导航-->
 <div class="sounav">
 {% include "search.html"%}
 </div>
 
-<!-- top2-->
-<div class="fcpd">
-	<!--全部商品分类-->
-  <div class="qbspfl_1">
-
-  {% include "news.html" %}
-  </div>
-  
 <div class="sp_banner">
 {% include "image.html" %}
 </div>
 
-<div class="zxsj">
-{% include "zxsj.html" %}
-      </div>
+<div class="">
+    {% include "news.html" %}
 </div>
-<!-- 1F -->
-<span id="productList">
 
-<div class="ff">
-      <div class="ff_1">
-      <div class="wzbt">
-      <span> 潮牌服装 </span>
-      </div>
-      <div class="more"></div>
-      </div>
-
-      <div class="ff_2_right">
-
- {% for item in goods %}
- {% if item.ptype_id == 3 %}
-      <div class="shangpin_2">
-      <a href="productLook?id={{item.id}}">
-      <img src="/product/{{item.image}}" width='160px' height='160px'/></a>
-      <br/>
-      <a href="productLook?id="">{{item.title}}</a>
-      <br />
-      <br/><span >会员价￥{{item.price}}</span>
-      </div>
-      {% endif %}
- {%  endfor %}
-      </div>
+<!--foot-->
+<div class="footer">
+    {% include "foot.html" %}
 </div>
 
 
-<div class="ff">
-      <div class="ff_1">
-      <div class="wzbt">
-      <span> 美食专区 </span>
-      </div>
-      <div class="more"></div>
-      </div>
-
-      <div class="ff_2_right">
-
- {% for item in goods %}
-    {% if item.ptype_id == 4 %}
-      <div class="shangpin_2">
-      <a href="productLook?id={{item.id}}">
-      <img src="/product/{{item.image}}" width='160px' height='160px'/></a>
-      <br/>
-      <a href="productLook?id="">{{item.title}}</a>
-      <br />
-      <br/><span >会员价￥{{item.price}}</span>
-      </div>
-      {% endif %}
- {%  endfor %}
-      </div>
-</div>
-
-
-
-</span>
-<div style="width:960px; height:auto; margin:10px auto 0 auto;">
-{% include "foot.html" %}
-</div>
 </body>
 </html>

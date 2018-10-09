@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 import os
-import sys
 import importlib
-
+import sys
 importlib.reload(sys)
-('utf-8')
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "shop_project.settings")
