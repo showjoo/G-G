@@ -17,4 +17,6 @@ urlpatterns = [
     url(r'^search/$', search, name='search'),
     url(r'^usercenter/$', usercenter, name='usercenter'),
     url(r'^saveOrder$', saveOrder, name='saveOrder'),
+    url(r'^history_order$', history_order, name='history_order'),
+    url(r'^history_donation$', history_donation, name='history_donation'),
 ]

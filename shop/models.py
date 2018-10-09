@@ -5,13 +5,13 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
     avatar = models.ImageField(upload_to='avatar/%Y/%m', default='avatar/default.png', max_length=200, blank=True, null=True, verbose_name='用户头像')
-    balance=models.FloatField(default=0,verbose_name='余额')
-    date_reg = models.DateTimeField(auto_now_add=True,verbose_name='注册时间')
-    mobile=models.CharField(verbose_name='手机', max_length=11)
-    address=models.CharField(verbose_name='地址', max_length=200)
-    post=models.CharField(verbose_name='邮编', max_length=10)
-
-    status=models.BooleanField(default=False, verbose_name='账户状态')
+    balance = models.FloatField(default=0, verbose_name='余额')
+    date_reg = models.DateTimeField(auto_now_add=True, verbose_name='注册时间')
+    mobile = models.CharField(verbose_name='手机', max_length=11)
+    address = models.CharField(verbose_name='地址', max_length=200)
+    post = models.CharField(verbose_name='邮编', max_length=10)
+    status = models.BooleanField(default=False, verbose_name='账户状态')
+    stu_number = models.CharField(max_length=13, verbose_name='学号')
 
     class Meta:
         verbose_name = '用户'
@@ -52,6 +52,7 @@ class Products(models.Model):
     def __unicode__(self):
         return str(self.title)
 
+
 # 订单模型
 class Order(models.Model):
     user=models.ForeignKey(User, blank=True, null=True, verbose_name='用户')
@@ -80,4 +81,10 @@ class Shopcar(models.Model):
 
     def __unicode__(self):
         return str(self.user)
+
+# 注册
+class Register(models.Model):
+   username = models.CharField(max_length = 24,verbose_name = '用户名')
+   password = models.CharField(max_length = 20,verbose_name = '密码')
+   stu_number= models.CharField(max_length=14, verbose_name='学号')
 

@@ -9,7 +9,7 @@
 <link href="style/home.css" rel="stylesheet" type="text/css" />
 <link href="style/landed.css" rel="stylesheet" type="text/css" />
 </head>
-<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
 	function register(){
 				var name=$("#name").val();
@@ -68,11 +68,11 @@
 								alert("注册失败！");
 								$("#saveButton").attr("disabled","");
 							}
-						});	
+						});
 					}
 				});
 	}
-	
+
 	function checkValue(){
 				var name=$("#name").val();
 				var account=$("#account").val();
@@ -167,4 +167,3 @@
 
 </body>
 </html>
-

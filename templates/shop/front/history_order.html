@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>历史订单</title>
+	<link href="/static/style/home.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/Css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/static/css/Css/layout.css" />
+		<script type="text/javascript" src="/static/js/Js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="/static/js/Js/layer/layer.js"></script>
+		<script type="text/javascript" src="/static/js/Js/haidao.offcial.general.js"></script>
+		<script type="text/javascript" src="/static/js/Js/select.js"></script>
+		<script type="text/javascript" src="/static/js/Js/haidao.validate.js"></script>
+</head>
+<body>
+
+
+
+
+
+<!--网站顶部-->
+<div class="webtop">
+{% include "top.html"%}
+</div>
+
+<!--搜索和导航-->
+<div class="sounav">
+{% include "search.html"%}
+</div>
+
+
+
+<div class="view-product">
+				<div class="info-center">
+		            <div class="manage-head">
+		                <h6 class="padding-left manage-head-con">历史订单</h6>
+		            </div>
+		            <div class="offcial-table input-table table-margin clearfix">
+		                <div class="tr-th clearfix">
+		                    <div class="th w5 text-center"><!--<input class="margin-top-15" type="checkbox" />--></div>
+		                    <div class="th w15"></div>
+		                    <div class="th w20">商品名称</div>
+		                    <div class="th w10">商品价格</div>
+		                    <div class="th w10">商品实际售价</div>
+		                    <div class="th w10">预订日期</div>
+		                    <div class="th w10">取货日期</div>
+							<div class="th w10">取货码</div>
+		                    <div class="th w10 text-center">商品状态</div>
+		                </div>
+						{% for orders in history_orders %}
+						<tr>
+			            	<div class="td w5 text-center"><!--<input class="margin-top-15" type="checkbox" />--></div>
+		                    <div class="td w15">{{ orders.id }}</div>
+		                    <div class="td w20">{{ orders.product }}</div>
+		                    <div class="td w10">商品价格</div>
+		                    <div class="td w10">商品实际售价</div>
+		                    <div class="td w10">预订日期</div>
+		                    <div class="td w10" >{{ orders.time }}</div>
+							<div class="td w10">取货码</div>
+		                    <div class="td w10 text-center">商品状态</div>
+						</tr>
+						{% endfor %}
+
+					</div>
+		        </div>
+		        <div class="show-page padding-big-right hidden">
+					<div class="page">
+					</div>
+		        </div>
+			</div>
+
+
+
+
+<!--网站底部-->
+<div class="footer">
+{% include "foot.html" %}
+</div>
+
+</body>
+</html>

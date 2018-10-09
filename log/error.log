@@ -148,3 +148,30 @@
 2018-04-12 21:30:37,193 [Thread-24:7788] [shop.views:243] [views:do_login] [ERROR]- login() takes exactly 1 argument (2 given)
 2018-04-12 21:31:54,684 [Thread-4:13844] [shop.views:244] [views:do_login] [ERROR]- login() takes exactly 1 argument (2 given)
 2018-04-12 21:34:03,270 [Thread-9:15060] [shop.views:209] [views:do_reg] [ERROR]- argument of type 'NoneType' is not iterable
+2018-10-08 06:26:52,195 [Thread-4:123145543450624] [shop.views:212] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 06:27:00,757 [Thread-5:123145543450624] [shop.views:212] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 06:28:31,307 [Thread-6:123145543450624] [shop.views:212] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 06:35:52,048 [Thread-7:123145543450624] [shop.views:212] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 06:37:54,837 [Thread-2:123145510334464] [shop.views:212] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 06:40:14,728 [Thread-6:123145510334464] [shop.views:212] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 06:47:10,407 [Thread-6:123145317904384] [shop.views:213] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 06:47:59,647 [Thread-8:123145317904384] [shop.views:213] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 06:50:23,680 [Thread-2:123145479020544] [shop.views:213] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 06:50:30,437 [Thread-4:123145479020544] [shop.views:213] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 07:20:00,336 [Thread-2:123145468600320] [shop.views:210] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 07:20:08,678 [Thread-4:123145468600320] [shop.views:210] [views:do_reg] [ERROR]- no such table: shop_register
+2018-10-08 07:29:07,803 [Thread-4:123145370148864] [shop.views:206] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-08 07:30:22,447 [Thread-2:123145388253184] [shop.views:205] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-08 08:06:13,099 [Thread-3:123145513881600] [shop.views:205] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-08 08:14:28,926 [Thread-5:123145410752512] [shop.views:205] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-08 08:19:46,706 [Thread-6:123145364946944] [shop.views:205] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-08 08:25:03,200 [Thread-9:123145364946944] [shop.views:205] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-08 08:26:24,924 [Thread-10:123145364946944] [shop.views:205] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-08 08:27:57,243 [Thread-2:123145364742144] [shop.views:239] [views:do_login] [ERROR]- loggin.html
+2018-10-08 08:29:26,025 [Thread-3:123145364742144] [shop.views:239] [views:do_login] [ERROR]- loggin.html
+2018-10-08 08:35:45,788 [Thread-3:123145495093248] [shop.views:204] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-08 08:37:31,742 [Thread-2:123145463119872] [shop.views:204] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-08 08:37:50,133 [Thread-5:123145463119872] [shop.views:204] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-08 08:46:47,971 [Thread-2:123145480355840] [shop.views:200] [views:do_reg] [ERROR]- 'password'
+2018-10-08 08:58:04,079 [Thread-4:123145435856896] [shop.views:204] [views:do_reg] [ERROR]- 'stduentid'
+2018-10-09 00:31:48,886 [Thread-21:123145533661184] [shop.views:204] [views:do_reg] [ERROR]- 'stduentid'
